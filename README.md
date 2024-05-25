@@ -22,24 +22,24 @@ We  utilize the Vegetable Image Recognition dataset from Kaggle, available at Ka
 
 # General Steps
 To reproduce the results of the vegetable classifier project using the TensorFlow and Keras libraries with a MobileNetV2/VGG-16 architecture we need to:
-(1)	Setup the Environment; we used Visual Studio Code with Python 3.10, also we used tensorflow version 2.15 to avoid any errors.
-(2)	Download the Dataset.
-(3)	Define Paths: Change the paths for train_dir, test_dir, and val_dir in the script to match where you've stored the corresponding datasets on your system.
-(4)	Load Image Paths and Generate DataFrames (MobileNetV2 / VGG-16).
-(5)	Configure the Image Data Generators
-(6)	Load the pretrained MobileNetV2/VGG-16 model.
-(7)	Build and Compile the Model.
-(8)	Train the Model.
-(9)	Evaluate Model Performance using the graphs.
+1.	Setup the Environment; we used Visual Studio Code with Python 3.10, also we used tensorflow version 2.15 to avoid any errors.
+2.	Download the Dataset.
+3.	Define Paths: Change the paths for train_dir, test_dir, and val_dir in the script to match where you've stored the corresponding datasets on your system.
+4.	Load Image Paths and Generate DataFrames (MobileNetV2 / VGG-16).
+5.	Configure the Image Data Generators
+6.	Load the pretrained MobileNetV2/VGG-16 model.
+7.	Build and Compile the Model.
+8.	Train the Model.
+9.	Evaluate Model Performance using the graphs.
 
 To reproduce the results of the vegetable classifier project using the TensorFlow and Keras libraries with a MLP tf.keras.Sequential architecture we need to:
-(1)	Setup the Environment; we used Visual Studio Code with Python 3.10, also we used tensorflow version 2.15 to avoid any errors.
-(2)	Download the Dataset.
-(3)	Define Paths: Change the paths for train_dir, test_dir, and val_dir in the script to match where you've stored the corresponding datasets on your system.
-(4)	Load Image Paths and Generate DataFrames.
-(5)	Configure the Image Data Generators.
-(6)	Define the MLP model.
-(7)	Compile the Model: Construct the MLP model using tf.keras.Sequential with the specified architecture and compile it with suitable parameters.
-(8)	Train the Model.
-(9)	Evaluate Model Performance using the graphs.
+1.	Setup the Environment; we used Visual Studio Code with Python 3.10, also we used tensorflow version 2.15 to avoid any errors.
+2.	Download the Dataset.
+3.	Define Paths: Change the paths for train_dir, test_dir, and val_dir in the script to match where you've stored the corresponding datasets on your system.
+4.	Load Image Paths and Generate DataFrames.
+5.	Configure the Image Data Generators.
+6.	Define the MLP model.
+7.	Compile the Model: Construct the MLP model using tf.keras.Sequential with the specified architecture and compile it with suitable parameters.
+8.	Train the Model.
+9.	Evaluate Model Performance using the graphs.
 
