@@ -173,7 +173,7 @@ history = model.fit(
     train_images,  
     validation_data=val_images, 
     batch_size=32,
-    epochs=8,
+    epochs=5,
     callbacks=[
         tf.keras.callbacks.EarlyStopping(
             monitor='val_loss',
