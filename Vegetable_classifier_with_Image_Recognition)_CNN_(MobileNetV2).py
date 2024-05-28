@@ -3,7 +3,7 @@
 //  File Name      : Vegetable_classifier_with_Image_Recognition)_CNN_(MobileNetV2).py
 //  Version        : 1.0
 //  Description    : Vegetable classifier with Image Recognition
-//  Authors        : Omar, Fares
+//  Authors        : Omar, Faris
 //  IDE            : Vscode
 //  Last Updated   : 08 May 2024
 //  Libraries Used : numpy, pandas, pathlib, tensorflow, matplotlib.pyplot
