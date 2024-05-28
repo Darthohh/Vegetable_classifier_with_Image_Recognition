@@ -3,19 +3,19 @@
 //  File Name      : Vegetable_classifier_with_Image_Recognition)_CNN_(VGG-16).py
 //  Version        : 1.0
 //  Description    : Vegetable classifier with Image Recognition
-//  Authors        : Omar, Fares
+//  Authors        : Omar, Faris
 //  IDE            : Vscode
 //  Last Updated   : 08 May 2024
 //  Libraries Used : numpy, pandas, pathlib, tensorflow, matplotlib.pyplot
 // ***************************************************************************
 """
 
-import numpy as np
-import pandas as pd
-from pathlib import Path
-import os.path
-import matplotlib.pyplot as plt
-import tensorflow as tf
+import numpy as np # Data Manipulation
+import pandas as pd # Data Manipulation
+from pathlib import Path # For File Paths
+import os.path # For operating system path manipulation
+import matplotlib.pyplot as plt # For Plotting Images
+import tensorflow as tf # for Building and training CNN model
 
 # Training Dir
 train_dir = Path('D:/OneDrive/University Documents/Subjects/(4) 2nd Semester 2024/Artificial Intelligence and Machine Learning - 22570/Project/2024-05-29 Project Report and Presentation/Data_Set/train')
@@ -29,7 +29,9 @@ test_filepaths = list(test_dir.glob(r'**/*.jpg'))
 val_dir = Path('D:/OneDrive/University Documents/Subjects/(4) 2nd Semester 2024/Artificial Intelligence and Machine Learning - 22570/Project/2024-05-29 Project Report and Presentation/Data_Set/validation')
 val_filepaths = list(val_dir.glob(r'**/*.jpg'))
 
-
+# Extracts labels from file paths.
+# Creates a DataFrame with file paths and corresponding labels.
+# Shuffles the DataFrame.
 def proc_img(filepath):
     # Create a DataFrame with the filepath and the labels of the pictures
 
@@ -74,6 +76,8 @@ plt.tight_layout(pad=0.5)
 plt.show()
 
 # Generator
+# Sets up ImageDataGenerator objects for data augmentation and preprocessing using VGG-16's preprocessing function.
+# Generates batches of augmented/normalized data for training, validation, and testing.
 train_generator = tf.keras.preprocessing.image.ImageDataGenerator(
     preprocessing_function=tf.keras.applications.vgg16.preprocess_input
 )
