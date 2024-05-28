@@ -3,19 +3,19 @@
 //  File Name      : Vegetable_classifier_with_Image_Recognition)_CNN_(VGG-16).py
 //  Version        : 1.0
 //  Description    : Vegetable classifier with Image Recognition
-//  Authors        : Omar, Fares
+//  Authors        : Omar, Faris
 //  IDE            : Vscode
 //  Last Updated   : 08 May 2024
 //  Libraries Used : numpy, pandas, pathlib, tensorflow, matplotlib.pyplot
 // ***************************************************************************
 """
 
-import numpy as np
-import pandas as pd
-from pathlib import Path
-import os.path
-import matplotlib.pyplot as plt
-import tensorflow as tf
+import numpy as np # Data Manipulation
+import pandas as pd # Data Manipulation
+from pathlib import Path # For File Paths
+import os.path # For operating system path manipulation
+import matplotlib.pyplot as plt # For Plotting Images
+import tensorflow as tf # for Building and training CNN model
 
 # Training Dir
 train_dir = Path('D:/OneDrive/University Documents/Subjects/(4) 2nd Semester 2024/Artificial Intelligence and Machine Learning - 22570/Project/2024-05-29 Project Report and Presentation/Data_Set/train')
@@ -29,6 +29,9 @@ test_filepaths = list(test_dir.glob(r'**/*.jpg'))
 val_dir = Path('D:/OneDrive/University Documents/Subjects/(4) 2nd Semester 2024/Artificial Intelligence and Machine Learning - 22570/Project/2024-05-29 Project Report and Presentation/Data_Set/validation')
 val_filepaths = list(val_dir.glob(r'**/*.jpg'))
 
+# Extracts labels from file paths.
+# Creates a DataFrame with file paths and corresponding labels.
+# Shuffles the DataFrame.
 def proc_img(filepath):
     # Create a DataFrame with the filepath and the labels of the pictures
     labels = [os.path.split(os.path.split(str(fp))[0])[1] for fp in filepath]
@@ -131,11 +134,11 @@ test_images = test_generator.flow_from_dataframe(
 
 # Define the MLP model
 model = tf.keras.Sequential([
-    tf.keras.layers.Flatten(input_shape=(224, 224, 3)),  # Flatten the 2D image to 1D
-    tf.keras.layers.Dense(512, activation='relu'),
+    tf.keras.layers.Flatten(input_shape=(224, 224, 3)),  # Flatten the 2D image to 1D, Accepts the input features.
+    tf.keras.layers.Dense(512, activation='relu'), # introduce non-linearity into the model
     tf.keras.layers.Dense(256, activation='relu'),
     tf.keras.layers.Dense(128, activation='relu'),
-    tf.keras.layers.Dense(5, activation='softmax')  # Assuming 5 classes
+    tf.keras.layers.Dense(5, activation='softmax')  # Assuming 5 classes, provides probability distributions for classification.
 ])
 
 # Compile the model
